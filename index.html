@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+
+    <link rel="icon" href="https://lens-storage.storage.googleapis.com/png/eb517e676367475a9bf8b40fb591be97">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            cursor: url(https://r2.guns.lol/5ee501a5-d7e5-4667-bda0-e957d2739d6d.cur) 16 16, auto !important;
+            height: 100vh;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+            background-color: #000;
+            transition: background-color 1s ease-in-out;
+        }
+
+        .initial-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .initial-text {
+            font-size: 2.5rem;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        video.background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .typewriter-textt {
+            display: inline-block;
+            font-size: 3rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            animation: typing 3s steps(30) 1s forwards;
+            text-shadow: 0 0 2px white, 0 0 5px white, 0 0 10px white;
+            color: white;
+            position: relative;
+        }
+
+        .typewriter-textt::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(https://assets.guns.lol/sparkle_white.gif) repeat;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .typewriter-text {
+            display: inline-block;
+            font-size: 3rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            animation: typing 3s steps(30) 1s forwards;
+            text-shadow: 0 0 2px white, 0 0 5px white, 0 0 10px white;
+            color: black;
+            position: relative;
+        }
+
+        .typewriter-text::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(https://assets.guns.lol/sparkle_white.gif) repeat;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        @keyframes typing {
+            to {
+                width: 100%;
+            }
+        }
+
+        audio {
+            margin-top: 2rem;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+        }
+
+        /* Cursor Blinking Effect */
+        .cursor {
+            display: inline-block;
+            width: 5px;
+            height: 35px;
+            background-color: white;
+            margin-left: 5px;
+            animation: blink 0.8s step-end infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+
+    </style>
+    <meta property="og:title" content="Lattos Leaks😳🔞" />
+    <meta property="og:image" content="https://reflectbeauty.com/wp-content/uploads/sites/14/2023/07/lattobetawards.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://andrilchakraborty.github.io/latto.leaks/" />
+
+</head>
+<body>
+
+    <div class="initial-screen" id="initial-screen">
+        <div class="initial-text" onclick="enterSite()">Click to Enter</div>
+    </div>
+
+    <video class="background-video" autoplay loop muted>
+        <source src="https://cdn.discordapp.com/attachments/1336818763026403329/1337339585964937229/lv_0_20250207022954.mp4?ex=67a7160b&is=67a5c48b&hm=0bd1aa35b22b4aedcd0a83445c672cc0ec81de30644a2563fe56577e099270ab&" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div id="main-content" style="display:none;">
+        <div class="typewriter-text" id="typewriter">Your IP: <span id="ip-text"></span><span class="cursor" id="cursor"></span></div>
+        <audio id="background-audio" loop>
+            <source src="https://cdn.discordapp.com/attachments/1336818763026403329/1337336921734643805/lavcnderaudios_2025-02-07-02-18-41_1738916321946.mp4?ex=67a71390&is=67a5c210&hm=b436849d1fe6c317ff27df2c39e7305e722193333450cd5518ecf863e21410ef&" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <script>
+        async function fetchAndDisplayIP() {
+            try {
+                const response = await fetch('https://api.ipify.org?format=json');
+                const data = await response.json();
+                typeOutText(data.ip, 'ip-text');
+            } catch (error) {
+                console.error('Failed to fetch IP:', error);
+            }
+        }
+
+        function typeOutText(text, elementId) {
+            const element = document.getElementById(elementId);
+            let index = 0;
+            const interval = setInterval(() => {
+                if (index < text.length) {
+                    element.textContent += text[index];
+                    index++;
+                } else {
+                    clearInterval(interval);
+                }
+            }, 150);
+        }
+
+        function typeTabTitle() {
+            const baseTitle = '@';
+            const typeText = ' a n d r i l';
+            let index = 0;
+            let typing = true;
+            let currentText = baseTitle;
+
+            const interval = setInterval(() => {
+                if (typing) {
+                    // Typing in
+                    if (index < typeText.length) {
+                        currentText += typeText[index];
+                        document.title = currentText;
+                        index++;
+                    } else {
+                        typing = false; 
+                    }
+                } else {
+
+                    if (index > 0) {
+                        currentText = currentText.slice(0, -1);
+                        document.title = currentText;
+                        index--;
+                    } else {
+                        typing = true; 
+                    }
+                }
+            }, 150); 
+        }
+
+        function enterSite() {
+            document.getElementById('initial-screen').style.opacity = '0';
+            setTimeout(function () {
+                document.getElementById('initial-screen').style.display = 'none';
+                document.getElementById('main-content').style.display = 'block';
+                fetchAndDisplayIP();
+                typeTabTitle();  
+                document.getElementById('background-audio').play();
+            }, 1000);
+        }
+    </script>
+
+</body>
+</html>
